@@ -65,21 +65,15 @@ public class Carrera {
         return this.tiempoCarrera;
     }
 
-    public void setCosteTotal(double costeTotal) {
-        this.costeTotal = costeTotal;
-    }
 
     public double getCosteTotal() {
-        return this.costeTotal;
+        return getCosteEsperado() + getPropina();
     }
 
     public void setPropina(int propina) {
         this.propina = propina;
     }
 
-    public int getPropina() {
-        return this.propina;
-    }
     
     public double getCosteEsperado(){
         return Tarifa.getInstancia().CosteTotalEsperado(this);
@@ -100,7 +94,13 @@ public class Carrera {
 
     };
 
-    public void recibirPropina(int propina){};
+    public void recibirPropina(int propina){
+        this.propina = propina;
+    };
+
+    public int getPropina(){
+        return this.propina;
+    }
 
     public void liberarConductor(){
         getConductor().setOcupado(false);
