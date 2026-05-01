@@ -5,9 +5,9 @@ public class Tarifa {
 
     private static Tarifa instancia;
 
-    private final double COSTE_MILLA = 15;
-    private final double COSTE_MINUTO = 1.6;
-    private final double COSTE_MINIMO = 1.2;
+    private final double COSTE_MILLA = 1;
+    private final double COSTE_MINUTO = 1;
+    private final double COSTE_MINIMO = 1;
 
 
     private Tarifa(){};
