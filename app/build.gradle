@@ -32,5 +32,5 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'edu.teamrocket.cotxox.App'
+    mainClass = 'edu.teamrocket.cotxox.Cotxox'
 }
