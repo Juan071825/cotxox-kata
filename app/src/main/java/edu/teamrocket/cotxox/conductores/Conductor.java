@@ -8,8 +8,8 @@ public class Conductor {
     private String modelo;
     private String matricula;
     private double valoracionMedia;
-    private boolean ocupado;
-    private ArrayList<Byte> valoraciones;
+    private boolean ocupado = false;
+    private ArrayList<Byte> valoraciones = new ArrayList<>();
 
 
     public Conductor(){};
@@ -40,7 +40,8 @@ public class Conductor {
     }
 
     public void setValoracion(byte valoracion){
-        valoraciones.add(valoracion);
+        this.valoraciones.add(valoracion);
+        this.valoracionMedia = calcularValoracionMedia();
     }
 
     public int getNumeroValoraciones(){
@@ -52,13 +53,11 @@ public class Conductor {
     }
 
     private double calcularValoracionMedia(){
-        return valoraciones.stream().mapToInt(Byte::intValue).sum() 
+        return valoraciones.stream().mapToDouble(Byte::doubleValue).sum() 
              / getNumeroValoraciones();
     }
 
-    public void setValoracion() {
-        this.valoracionMedia = calcularValoracionMedia();
-    }
+
 
     public double getValoracion() {
         return this.valoracionMedia;
