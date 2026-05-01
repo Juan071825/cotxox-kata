@@ -33,7 +33,7 @@ public class Tarifa {
     }
 
 
-    public double TotalEsperado(Carrera carrera){
+    public double CosteTotalEsperado(Carrera carrera){
         return COSTE_MINIMO 
              + getCosteDistancia(carrera.getDistancia())
              + getCosteTiempo(carrera.getTiempoCarrera());
