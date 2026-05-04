@@ -19,13 +19,14 @@ public class PoolConductores {
 
     public Conductor asignarConductor(){
         List<Conductor> conductoresLibres = getPoolConductores();
-        conductoresLibres.removeIf(conductor -> conductor.isOcupado() == true);
+        conductoresLibres.removeIf(conductor -> conductor.isOcupado());
         
         if(conductoresLibres.size() == 0){
              return null;
          }     
 
         int indexConductor = ThreadLocalRandom.current().nextInt(0, conductoresLibres.size());
+        conductoresLibres.get(indexConductor).setOcupado(true);
         return conductoresLibres.get(indexConductor);
     }
 }
